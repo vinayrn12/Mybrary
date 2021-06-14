@@ -6,6 +6,7 @@ const express = require('express'),
       expressLayout = require('express-ejs-layouts'),
       mongoose = require('mongoose'),
       bodyParser = require('body-parser'),
+      methodOverride = require('method-override'),
       app = express();
 
 const indexRouter = require('./routes/index');
@@ -17,6 +18,7 @@ app.set("views", __dirname + "/views");
 app.set("layout", "./layouts/layout");
 app.use(expressLayout);
 app.use(express.static("public"));
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({limit: "10mb", extended: false}));
 
 //db setup
