@@ -15,12 +15,14 @@
 <br>
 
 <% authors.forEach(author => { %>
-    <div><%= author.name%></div>
-    <div class="btn-row">
-        <a class="btn btn-primary"href="/authors/<%= author._id %>">View</a>
-        <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
-        <form method="post" action="/authors/<%= author._id %>?_method=DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
-        </form>
+    <div class="author-row">
+        <div class="author-name"><%= author.name%></div>
+        <div class="btn-row">
+            <a class="btn btn-primary"href="/authors/<%= author._id %>">View</a>
+            <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
+            <form method="post" action="/authors/<%= author._id %>?_method=DELETE">
+                <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+        </div>
     </div>
 <% }) %>
