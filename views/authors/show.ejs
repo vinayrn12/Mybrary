@@ -1,12 +1,14 @@
 <h2 class="page-header"><%= author.name %></h2>
 
-<a href="/authors/<%= author._id %>/edit">Edit</a>
-<form method="post" action="/authors/<%= author._id %>?_method=DELETE">
-    <button type="submit">Delete</button>
-</form>
+<div class="btn-row">
+    <a class="btn btn-primary" href="/authors/<%= author._id %>/edit">Edit</a>
+    <form method="post" action="/authors/<%= author._id %>?_method=DELETE">
+        <button class="btn btn-danger"type="submit">Delete</button>
+    </form>
+</div>
 
 <% if(foundBooks.length > 0){ %>
-    <h2>Books by the Author</h2>
+    <h2 class="page-header">Books by the Author</h2>
     <% foundBooks.forEach(book => { %>
         <a href="/books/<%= book._id %>">
             <img height="150" width="150" src="<%= book.coverImagePath %>">
